@@ -1,0 +1,32 @@
+<!---This is basically the article template-->
+
+<div class="four wide column center aligned votes">
+    <div class="ui statistic">
+     <div class="value">
+    {{ article.votes }}
+  </div>
+     <div class="label">
+       Points
+     </div>
+   </div>
+    </div>
+    <div class="twelve wide column">
+<a class="ui large header" href="{{ article.link }}"> <!---We can use template strings even for attribute values which is nice!-->
+    {{ article.title }}
+ </a>
+ <div class="meta">({{ article.domain() }})</div>
+ <ul class="ui big horizontal list voters">
+<li class="item">
+ <a href (click)="voteUp()"> <!---When the user clicks on upvote the voteUp() function is activated -->
+<i class="arrow up icon"></i>
+ upvote
+</a>
+</li>
+<li class="item">
+  <a href (click)="voteDown()"> <!---When the user clicks on downvote the voteDown() function is activated -->
+<i class="arrow down icon"></i>
+    downvote
+ </a>
+ </li>
+ </ul>
+ </div>
